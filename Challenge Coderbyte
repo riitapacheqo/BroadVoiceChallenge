@@ -1,0 +1,53 @@
+
+1. What questions would you ask in order to clarify requirements?
+    A. What is the expected behaviour when a user inputs invalid data?
+    B. What is the expected behaviour if the user submits the form with empty fields?
+    C. What is the expected behaviour if the user submits the form with fields incompleted?
+    D. What are the boundaries/limits for the input data on email and names? (special characters/case sensitive)
+    E. If the user takes more time that is expected on changing the temporary password, would he need to create the user again to receive a new temporary password?
+    F. What is the timeflow between the user creation into the database and the receiving of the email with the password?
+    G. Is there any security protocols presented in the page, when the user logs in with the temporary passwrod?
+
+
+
+
+2. Specify 5 test cases to test this requirement
+
+  - Test Case 1: Valid User Creation
+      > This test is to create a user with valid data inserted, when the user is on the creation page. 
+      > Steps: Enter a valid email address > Enter a valid first name > Enter a valid last name > click on the save button
+      > Expected Results: User is created with success > The information is saved on the database correctly
+
+  - Test Case 2: Time taken when saving the user creation on the database with valid data:
+      > This test is to ensure that the user creation data is saved on the database up to 3 seconds, regardless of whether the user is entering the minimum or maximum accepted characters.
+      > Steps for scenario 1: Type valid name, first and last name with **minimum** characters > Click the save button > Confirm on the database the time taken.
+      > Steps for scenario 1: Type valid name, first and last name with **maximum** characters > Click the save button > Confirm on the database the time taken.
+      > Expected Results: The user is created, and the operation completes in under 3 seconds on both scenarios. 
+
+
+  - Test Case 3: First and Last Name Lenght Validation
+      > This test is to make sure that the fields for this data allows the input of the data lenght determined. 
+      > Steps: Type a valid email address > Enter a first name with more that 10 characters > Enter a first name with more than 11 characters > Repeat it to the last name > Click on the save button
+      > Expected Results:The system doesn't allow the characters to be more than 10 characters and displays an error message. 
+
+
+
+  - Test Case 4: Required Fields saved empty
+      > This Test is to submit the form with one or more empty required fields.
+      > Steps: Type a valid email address > Leave the first and last name empty > Click on the Save button
+      > Expected Results: The system displays an error message and doesn't allow the completion of the action. 
+
+  - Test Case 5: Invalid email format
+      > This test is to confirm that is not possible to save an invalid email format. 
+      > Steps: Enter an invalid email address (with no @ or with -com instead of .com) > Enter a valid First and Last Name > Click on the save button. 
+      > Expected Results:  The system displays an error message and doesn't allow the completion of the action. 
+
+
+
+
+
+
+
+
+
+
